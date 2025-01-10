@@ -1,0 +1,15 @@
+.class
+
+.log
+
+.idea/
+*.iml
+
+.project
+.classpath
+.settings/
+
+target/
+build/
+
+config.properties
