@@ -28,10 +28,10 @@ public class Main {
         while (flag) {
             System.out.println("1. Login");
             System.out.println("2. Browse Products");
-            System.out.println("3. Place main.java.Order.Order");
+            System.out.println("3. Place Order");
             System.out.println("4. View Orders");
             System.out.println("5. View Ordered Items");
-            System.out.println("6. Track main.java.Delivery.Delivery");
+            System.out.println("6. Track Delivery");
             System.out.println("7. Logout");
             System.out.println("8. Exit");
 
@@ -82,7 +82,7 @@ public class Main {
                                     System.out.print("Enter description of the product: ");
                                     productDescription = sc.nextLine();
                                     product.addProduct(productName, productCategory, price, stockQuantity, productDescription);
-                                    System.out.println("main.java.Product.Product - " + product.getProductName() + " added successfully!");
+                                    System.out.println("Product - " + product.getProductName() + " added successfully!");
                                     break;
 
                                 case 4:
@@ -122,12 +122,12 @@ public class Main {
                 case 3:
                     if (loggedIn) {
                         ArrayList<OrderItems> items = new ArrayList<>();
-                        System.out.println("Enter product IDs and quantities to add to the order:");
+                        System.out.println("Enter Product Names and Quantities to add to the order:");
 
                         double totalPrice;
                         boolean addMore = true;
                         while (addMore) {
-                            System.out.print("main.java.Product.Product: ");
+                            System.out.print("Product: ");
                             String productName = sc.nextLine();
                             System.out.print("Quantity: ");
                             int quantity = sc.nextInt();
@@ -139,7 +139,7 @@ public class Main {
                                 orderItems = new OrderItems(0, selectedProduct.getProductId(), quantity, selectedProduct.getPrice(), totalPrice);
                                 items.add(orderItems);
                             } else {
-                                System.out.println("main.java.Product.Product not available or insufficient stock.");
+                                System.out.println("Product not available or insufficient stock.");
                             }
                             System.out.print("Add more items? (yes/no): ");
                             addMore = sc.nextLine().equalsIgnoreCase("yes");
@@ -168,7 +168,7 @@ public class Main {
                             System.out.println("No orders found.");
                         } else {
                             for (Order o : orderArrayList) {
-                                System.out.println("main.java.Order.Order ID: " + o.getOrderId() + ", Status: " + o.getOrderStatus() + ", Total Amount: " + o.getTotalAmount());
+                                System.out.println("Order ID: " + o.getOrderId() + ", Status: " + o.getOrderStatus() + ", Total Amount: " + o.getTotalAmount());
                             }
                         }
                     } else {
@@ -187,7 +187,7 @@ public class Main {
                             System.out.println("No items found for this order.");
                         } else {
                             for (OrderItems item : orderedItems) {
-                                System.out.println("main.java.Product.Product ID: " + item.getProductId() + ", Quantity: " + item.getQuantity() + ", Total Price: " + item.getTotalPrice());
+                                System.out.println("Product ID: " + item.getProductId() + ", Quantity: " + item.getQuantity() + ", Total Price: " + item.getTotalPrice());
                             }
                         }
                     } else {
@@ -204,7 +204,7 @@ public class Main {
                         if (delivery != null) {
                             delivery.trackDelivery(orderId);
                         } else {
-                            System.out.println("main.java.Delivery.Delivery not found.");
+                            System.out.println("Delivery not found.");
                         }
                     } else {
                         System.out.println("Please login first.");

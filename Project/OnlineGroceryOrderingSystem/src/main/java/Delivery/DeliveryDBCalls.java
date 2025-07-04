@@ -46,7 +46,7 @@ public class DeliveryDBCalls {
             ResultSet rs = pst.getGeneratedKeys();
             if (rs.next()) {
                 int generatedId = rs.getInt(1);
-                System.out.println("main.java.Delivery.Delivery record inserted with main.java.Delivery.Delivery ID: " + generatedId);
+                System.out.println("Delivery record inserted with Delivery ID: " + generatedId);
             }
 
         } catch (SQLException e) {

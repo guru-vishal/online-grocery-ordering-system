@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 public class DBTestConnection {
     Connection con = null;
 
-    String url = "jdbc:mysql://localhost:3305/online_grocery_delivery_system";
+    String url = "jdbc:mysql://localhost:3306/online_grocery_ordering_system";
     String userName = "root";
-    String password = "Kuruviii@3016";
+    String password = "3016";
 
     public Connection getConnection() {
         if (con == null) {

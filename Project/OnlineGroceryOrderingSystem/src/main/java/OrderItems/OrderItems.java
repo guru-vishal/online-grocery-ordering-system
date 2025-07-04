@@ -27,9 +27,9 @@ public class OrderItems {
         this.totalPrice = totalPrice;
     }
 
-//    public int getOrderItemId() {
-//        return orderItemId;
-//    }
+    public int getOrderItemId() {
+        return orderItemId;
+    }
 
 //    public void setOrderItemId(int orderItemId) {
 //        this.orderItemId = orderItemId;
@@ -83,6 +83,7 @@ public class OrderItems {
     public void addOrderItem(int orderId, int productId, int quantity, double price) {
         OrderItemsDBCalls orderItemsDBCalls = new OrderItemsDBCalls();
         orderItemsDBCalls.addOrderItem(orderId, productId, quantity, price);
-        System.out.println("Item added successfully to order id: " + this.getOrderId() + " with item id: " + this.orderItemId);
+        this.orderItemId = orderItemsDBCalls.getOrderItemId(orderId,productId,quantity,price);
+        System.out.println("Item added successfully to order id: " + this.getOrderId() + " with item id: " + this.getOrderItemId());
     }
 }

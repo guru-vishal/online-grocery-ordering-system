@@ -22,7 +22,7 @@ public class ProductDBCalls {
             pst.setString(5, description);
             int rowsAffected = pst.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("main.java.Product.Product added successfully.");
+                System.out.println("Product added successfully.");
             }
         } catch (SQLException e) {
             System.out.println("Error adding product: " + e.getMessage());

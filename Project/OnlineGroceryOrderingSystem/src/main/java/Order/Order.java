@@ -76,10 +76,10 @@ public class Order implements OrderPlacement{
         this.orderId = orderDBCalls.getLastInsertedOrderId();
 
         for (OrderItems item : items) {
-            System.out.println("main.java.Order.Order item for product ID: " + item.getProductId() + " added.");
+            System.out.println("Order item for product ID: " + item.getProductId() + " added.");
         }
 
-        System.out.println("main.java.Order.Order placed successfully with ID: " + this.orderId + " for customer ID: " + this.customerId + " on " + this.orderDate);
+        System.out.println("Order placed successfully with ID: " + this.orderId + " for customer ID: " + this.customerId + " on " + this.orderDate);
         System.out.println("Total amount: Rs." + this.totalAmount);
     }
 
@@ -96,6 +96,6 @@ public class Order implements OrderPlacement{
     public void updateOrderStatus(int orderId, String newStatus) {
         OrderDBCalls orderDBCalls = new OrderDBCalls();
         orderDBCalls.updateOrderStatus(orderId, newStatus);
-        System.out.println("main.java.Order.Order status updated to: " + newStatus);
+        System.out.println("Order status updated to: " + newStatus);
     }
 }

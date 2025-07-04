@@ -8,5 +8,7 @@ CREATE TABLE Orders(
 );
 
 SELECT * FROM Orders;
+
 DELETE FROM Orders;
+
 DROP TABLE Orders;

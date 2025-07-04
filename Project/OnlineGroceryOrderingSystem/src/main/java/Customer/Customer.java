@@ -58,16 +58,23 @@ public class Customer {
 //    }
 
     public int login(String phoneEmail){
-        CustomerDBCalls customerDBCalls = new CustomerDBCalls();
-        Customer customerData = customerDBCalls.getCustomerByPhoneOrEmail(phoneEmail);
+        try {
+            CustomerDBCalls customerDBCalls = new CustomerDBCalls();
+            Customer customerData = customerDBCalls.getCustomerByPhoneOrEmail(phoneEmail);
 
-        if (customerData != null) {
-            this.customerId = customerData.getCustomerId();
-            this.customerName = customerData.getCustomerName();
-            this.customerEmail = customerData.getCustomerEmail();
-            this.customerPhoneNo = customerData.getCustomerPhoneNo();
-            this.customerAddress = customerData.getCustomerAddress();
-            return 1;
+            if (customerData != null) {
+                this.customerId = customerData.getCustomerId();
+                this.customerName = customerData.getCustomerName();
+                this.customerEmail = customerData.getCustomerEmail();
+                this.customerPhoneNo = customerData.getCustomerPhoneNo();
+                this.customerAddress = customerData.getCustomerAddress();
+                return this.customerId;
+            } else {
+                System.out.println("⚠️ Login failed: No user found with '" + phoneEmail + "'");
+            }
+        } catch (Exception e) {
+            System.out.println("❌ Runtime exception during login:");
+//            e.printStackTrace();
         }
         return 0;
     }

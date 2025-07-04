@@ -10,5 +10,7 @@ CREATE TABLE OrderItems(
 );
 
 SELECT * FROM OrderItems;
+
 DELETE FROM OrderItems;
+
 DROP TABLE OrderItems;

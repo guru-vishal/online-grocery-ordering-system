@@ -8,5 +8,7 @@ CREATE TABLE Deliveries(
 );
 
 SELECT * FROM Deliveries;
+
 DELETE FROM Deliveries;
+
 DROP TABLE Deliveries;

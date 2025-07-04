@@ -70,8 +70,8 @@ public class Delivery implements DeliveryTracking{
         this.deliveryStatus = "In Transit";
         this.trackingInfo = "Your order is on the way.";
 
-        System.out.println("main.java.Delivery.Delivery ID: " + this.deliveryId);
-        System.out.println("main.java.Delivery.Delivery status for main.java.Order.Order ID " + this.orderId + ": " + this.getDeliveryStatus());
+        System.out.println("Delivery ID: " + this.deliveryId);
+        System.out.println("Delivery status for Order ID " + this.orderId + ": " + this.getDeliveryStatus());
         System.out.println("Tracking Info: " + this.getTrackingInfo());
         System.out.println("Expected delivery date: " + deliveryDate);
     }

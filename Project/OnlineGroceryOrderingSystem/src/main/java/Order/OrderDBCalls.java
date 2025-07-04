@@ -60,7 +60,7 @@ public class OrderDBCalls {
             pst.setInt(2, orderId);
             int rowsAffected = pst.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("main.java.Order.Order status updated successfully.");
+                System.out.println("Order status updated successfully.");
             }
         } catch (SQLException e) {
             System.out.println("Error updating order status: " + e.getMessage());
